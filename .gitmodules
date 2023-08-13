@@ -4,3 +4,9 @@
 [submodule "packages/sshremote/sshremote"]
 	path = packages/sshremote/sshremote
 	url = https://github.com/R-ng-Dong/sshremote
+[submodule "packages/lvgl/src/lvgl"]
+	path = packages/lvgl/src/lvgl
+	url = https://github.com/lvgl/lvgl.git
+[submodule "packages/lvgl/src/lv_drivers"]
+	path = packages/lvgl/src/lv_drivers
+	url = https://github.com/lvgl/lv_drivers.git
