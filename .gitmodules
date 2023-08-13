@@ -1,0 +1,6 @@
+[submodule "packages/smh/smh_HC"]
+	path = packages/smh/smh_HC
+	url = https://github.com/R-ng-Dong/smh_HC.git
+[submodule "packages/sshremote/sshremote"]
+	path = packages/sshremote/sshremote
+	url = https://github.com/R-ng-Dong/sshremote
