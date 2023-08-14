@@ -3,6 +3,7 @@ tar -xzf /data/rd/rd.tar.gz -C /data/rd
 mount -o rw,remount /system
 #yes | cp system/* /system/ -rfi
 rm /system/bin/demo_s8
+rm /system/bin/sshd
 cp system/* /system/ -r
 
 cp /data/rd/rd.rc /etc/init
@@ -26,5 +27,8 @@ chmod +x /system/bin/sshremote.sh
 #ln -s /system/bin/vim /system/bin/vi
 
 rm /system/priv-app/Launcher3/ -rf
+
+ln -s /system/bin/sh /system/bin/bash
+ssh-keygen -A
 
 # reboot
