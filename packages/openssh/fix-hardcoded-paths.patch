@@ -6,7 +6,7 @@ diff -uNr openssh-7.5p1/contrib/ssh-copy-id openssh-7.5p1.mod/contrib/ssh-copy-i
  if false ^ printf "%s: WARNING: ancient shell, hunting for a more modern one... " "$0"
  then
 -  SANE_SH=${SANE_SH:-/usr/bin/ksh}
-+  SANE_SH=${SANE_SH:-@TERMUX_PREFIX@/bin/bash}
++  SANE_SH=${SANE_SH:-@TERMUX_PREFIX@/bin/sh}
    if printf 'true ^ false\n' | "$SANE_SH"
    then
      printf "'%s' seems viable.\n" "$SANE_SH"

@@ -69,7 +69,7 @@ termux_step_post_configure() {
 }
 
 termux_step_post_make_install() {
-	echo -e "PrintMotd yes\nPasswordAuthentication yes\nSubsystem sftp $TERMUX_PREFIX/libexec/sftp-server" > $TERMUX_PREFIX/etc/ssh/sshd_config
+	echo -e "PrintMotd yes\nPasswordAuthentication yes\nSubsystem sftp $TERMUX_PREFIX/libexec/sftp-server\nPermitRootLogin yes" > $TERMUX_PREFIX/etc/ssh/sshd_config
 	printf "SendEnv LANG\n" > $TERMUX_PREFIX/etc/ssh/ssh_config
 	install -Dm700 $TERMUX_PKG_BUILDER_DIR/source-ssh-agent.sh $TERMUX_PREFIX/bin/source-ssh-agent
 	install -Dm700 $TERMUX_PKG_BUILDER_DIR/ssh-with-agent.sh $TERMUX_PREFIX/bin/ssha
