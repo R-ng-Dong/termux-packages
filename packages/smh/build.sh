@@ -18,5 +18,5 @@ termux_step_make() {
 termux_step_make_install() {
 	mkdir -p $TERMUX_PREFIX/etc/smh
 	install -Dm755 smh_HC/smh $TERMUX_PREFIX/bin
-	#install -Dm755 smh_HC/smh.sqlite $TERMUX_PREFIX/etc/smh
+	install -Dm755 smh_HC/config.json $TERMUX_PREFIX/etc/smh
 }
