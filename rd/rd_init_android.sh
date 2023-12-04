@@ -26,7 +26,7 @@ chmod +x /system/bin/sshremote.sh
 
 #ln -s /system/bin/vim /system/bin/vi
 
-rm /system/priv-app/Launcher3/ -rf
+#rm /system/priv-app/Launcher3/ -rf
 
 ln -s /system/bin/sh /system/bin/bash
 ssh-keygen -A
