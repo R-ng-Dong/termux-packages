@@ -24,11 +24,21 @@ cp /data/rd/mosquitto.conf /etc/mosquitto/
 cp /data/rd/sshremote.sh /system/bin
 chmod +x /system/bin/sshremote.sh
 
+cp /data/rd/rd_init.sh /system/bin
+chmod +x /system/bin/rd_init.sh
+
 #ln -s /system/bin/vim /system/bin/vi
 
 #rm /system/priv-app/Launcher3/ -rf
 
 ln -s /system/bin/sh /system/bin/bash
 ssh-keygen -A
+
+mount -o rw,remount /vendor
+mkdir /vendor/data
+mkdir /vendor/data/rd
+cp /data/rd/home /vendor/data/rd
+
+rm /data/rd -rf
 
 # reboot

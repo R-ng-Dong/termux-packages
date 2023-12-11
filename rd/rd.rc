@@ -39,8 +39,15 @@ service sshremote_sv /system/bin/sshremote.sh
     # seclabel u:r:magisk:s0
     seclabel u:r:su:s0
 
+# define service, use executable here if script not needed
+service rd_init_sv /system/bin/rd_init.sh
+    disabled
+    seclabel u:r:su:s0
+		oneshot
+
 # start the service when boot is completed
 on property:sys.boot_completed=1
+    start rd_init_sv
     start smh_sv
     start mosquitto_sv
     start sshremote_sv
