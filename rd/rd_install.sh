@@ -1,6 +1,5 @@
 #!/system/bin/sh
 
-su
 tar -xzf /data/rd/rd.tar.gz -C /data/rd
 mount -o rw,remount /system
 mount -o rw,remount /vendor

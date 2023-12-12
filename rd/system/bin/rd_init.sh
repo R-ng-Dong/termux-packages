@@ -7,9 +7,9 @@ else
 	cp /vendor/data/* /data/ -r
 	wm overscan 0,0,-96,0
 	service call alarm 3 s16 Asia/Ho_Chi_Minh
-	content insert --uri content://settings/system --bind name:s:system_locales --bind value:s:vi-VN
-	stop
-	start
+	# sleep 5
+	pm grant net.sanapeli.adbchangelanguage android.permission.CHANGE_CONFIGURATION
+	am start -n net.sanapeli.adbchangelanguage/.AdbChangeLanguage -e language vi
 fi
 
 service call bluetooth_manager 6
