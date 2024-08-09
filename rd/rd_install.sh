@@ -19,4 +19,14 @@ ssh-keygen -A
 
 rm /data/rd -rf
 
+KEY="RANGDONGRALSMART"
+KEY_HEX=$(echo -n "$KEY" | xxd -p | tr -d '\n')
+MAC=$(ip link show eth0 | grep ether | cut -d' ' -f6 | tr -d ':' | tr 'A-F' 'a-f')
+INPUT_DATA="2804$MAC"
+OUTPUT_FILE="/etc/mosquitto/password.txt"
+
+ENCRYPTED_DATA=$(echo -n "$INPUT_DATA" | openssl enc -aes-128-ecb -K $KEY_HEX -nosalt | xxd -p | tr 'a-f' 'A-F' | tr -d '\n ')
+echo -n "RD:$ENCRYPTED_DATA" > $OUTPUT_FILE
+mosquitto_passwd -U $OUTPUT_FILE
+
 reboot
