@@ -19,6 +19,11 @@ ssh-keygen -A
 
 rm /data/rd -rf
 
+# openssl req -x509 -newkey rsa:4096 -keyout /etc/mosquitto/mosquitto.key -out /etc/mosquitto/mosquitto.crt -days 365 -nodes
+openssl req -x509 -newkey rsa:4096 -keyout /etc/mosquitto/mosquitto.key -out /etc/mosquitto/mosquitto.crt -days 365 -nodes \
+-subj "/C=VN/ST=HN/L=HN/O=Unknown/OU=Unknown/CN=rangdong"
+
+
 KEY="RANGDONGRALSMART"
 KEY_HEX=$(echo -n "$KEY" | xxd -p | tr -d '\n')
 MAC=$(ip link show eth0 | grep ether | cut -d' ' -f6 | tr -d ':' | tr 'A-F' 'a-f')
