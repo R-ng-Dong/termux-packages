@@ -5,7 +5,7 @@ if [[ `ls /data/rd/home/.termux_authinfo 2> /dev/null` ]]; then
 else
 	echo "RAL init config";
 	cp /vendor/data/* /data/ -r
-	wm overscan 0,0,-96,0
+	wm overscan 0,0,0,-47
 	service call alarm 3 s16 Asia/Ho_Chi_Minh
 	# sleep 5
 	pm grant net.sanapeli.adbchangelanguage android.permission.CHANGE_CONFIGURATION
